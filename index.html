@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>test22 샘플 페이지</title>
+  <style>
+    :root { --bg: #f6f7fb; --card: #ffffff; --text: #1d2433; --muted: #5b6475; --accent: #4f46e5; }
+    * { box-sizing: border-box; }
+    body { margin: 0; font-family: "Pretendard", "Malgun Gothic", system-ui, sans-serif; background: var(--bg); color: var(--text); }
+    header { padding: 64px 16px 40px; text-align: center; }
+    h1 { margin: 0 0 12px; font-size: 2.25rem; }
+    p.lead { margin: 0; color: var(--muted); }
+    main { max-width: 880px; margin: 0 auto; padding: 0 16px 64px; display: grid; gap: 16px; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); }
+    .card { background: var(--card); border-radius: 12px; padding: 24px; box-shadow: 0 1px 3px rgba(0,0,0,.08); }
+    .card h2 { margin: 0 0 8px; font-size: 1.1rem; }
+    .card p { margin: 0; color: var(--muted); line-height: 1.6; }
+    .cta { text-align: center; padding-bottom: 64px; }
+    button { background: var(--accent); color: #fff; border: 0; border-radius: 8px; padding: 12px 24px; font-size: 1rem; cursor: pointer; }
+    button:hover { opacity: .9; }
+    #count { margin-top: 12px; color: var(--muted); }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>안녕하세요, test22 👋</h1>
+    <p class="lead">GitHub 레포 업로드 테스트용 샘플 HTML 페이지입니다.</p>
+  </header>
+
+  <main>
+    <section class="card">
+      <h2>빠르게</h2>
+      <p>HTML 파일 하나로 바로 브라우저에서 열 수 있습니다.</p>
+    </section>
+    <section class="card">
+      <h2>간단하게</h2>
+      <p>별도 빌드 도구나 라이브러리 없이 동작합니다.</p>
+    </section>
+    <section class="card">
+      <h2>반응형</h2>
+      <p>모바일과 데스크톱 화면 모두에 맞게 배치됩니다.</p>
+    </section>
+  </main>
+
+  <div class="cta">
+    <button id="btn">눌러보세요</button>
+    <div id="count">아직 누르지 않았어요.</div>
+  </div>
+
+  <script>
+    let n = 0;
+    document.getElementById('btn').addEventListener('click', () => {
+      n++;
+      document.getElementById('count').textContent = `${n}번 눌렀어요!`;
+    });
+  </script>
+</body>
+</html>
